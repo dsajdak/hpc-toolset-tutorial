@@ -1,4 +1,4 @@
-ARG HPCTS_VERSION=latest
+ARG HPCTS_VERSION=2022.07
 
 FROM --platform=linux/amd64 ubccr/hpcts:base-${HPCTS_VERSION} as stage-amd64
 

@@ -15,7 +15,10 @@ log_info "Installing required packages for building slurm.."
 curl -o /etc/yum.repos.d/turbovnc.repo https://turbovnc.org/pmwiki/uploads/Downloads/TurboVNC.repo
 dnf -y install dnf-plugins-core
 dnf -y config-manager --set-enabled powertools
-dnf -y module enable ruby:2.7 nodejs:12
+dnf -y module remove nodejs
+dnf -y module disable nodejs
+dnf -y module reset nodejs
+dnf -y module enable ruby:2.7 nodejs:16
 dnf install -y \
     @Development \
     munge \
